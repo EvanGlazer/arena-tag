@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>Arena Tag</title>
+	<link rel='stylesheet' href="css/main.css" />
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+	<script src="js/lib/three.js"></script>
+	<script src="js/lib/PlayerControls.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyACnuKthLf2XI57oTnDa2u3byrRBS_gvnY",
+	    authDomain: "arena-tag.firebaseapp.com",
+	    databaseURL: "https://arena-tag.firebaseio.com",
+	    projectId: "arena-tag",
+	    storageBucket: "",
+	    messagingSenderId: "382015278955"
+	  };
+	  firebase.initializeApp(config);
+	  var fbRef = firebase.database().ref("data");
+	</script>
+</head>
+<body>
+	<div id="menu">
+    <h5 id="error"></h5>
+    <h1>Arena Tag</h1>
+    <p id ="left"><strong>Basis: </strong></p>
+		<p>
+			Each Game is sixty seconds of tag. Become the person who
+			 tags others and steal there points.
+    </p>
+    <hr>
+     <p id ="left"><strong>Movement: </strong></p>
+      <p><b>WASD or Arrows and Mouse for different camera pov</b><p>
+      <p>Author: Evan Glazer</p>
+			<hr>
+
+    <h1 id="left">Player Profile<h1>
+		<h3>Choose Character:</h3>
+		<button id="circle_selected">Circle</button>
+		<button id="square_selected">Square</button>
+		<br>
+		<h3>Choose Character Color:</h3>
+    <button id="red_selected">Red</button>
+		<button id="blue_selected">Blue</button>
+		<button id="green_selected">Green</button>
+		<button id="yellow_selected">Yellow</button>
+	  <br>
+		<br>
+    <button id="play_button">Play</button>
+  </div>
+	 <div style="display:none;" id='container'>
+		 <div id="startOver">
+	    <label class="pull-left">Controls:
+	       <span id="controls"><strong>WASD or Arrows and Mouse for different camera pov<strong></span></label>
+	    <br>
+	    <label class="pull-left">Time left:
+	       <span id="timer">∞</span></label>
+	    <br>
+	    <label class="pull-left">Score:
+	      <span id="score">0</span></label>
+	    <br>
+	    <label class="pull-left"> Active Players:
+	      <span id="playersCount">0</span></label>
+	    <label id="players" class="pull-right"><label>
+	    <br>
+	    <label class="pull-left">Game Status:
+	      <span id="player_game_status">You're the runner</span></label>
+	    <button id="endGame">End Game</button>
+	  </div>
+		<script src="js/player.js"></script>
+		<script src="js/game.js"></script>
+		<script src="js/main.js"></script>
+	</div>
+</body>
+	<script src="js/menu.js"></script>
+</html>
